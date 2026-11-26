@@ -1,0 +1,287 @@
+/* Ensure the browser window allows 100% height */
+html, body {
+  min-height: 100%;
+  width: 100%;
+  margin: 0;
+  background: linear-gradient(to left, #00e484, #b0eddc);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 70vh;
+  overflow-x: hidden;
+}
+
+.New_France_title {
+  font-size: clamp(80px, 18vw, 300px);
+  text-align: center;
+  margin: 180px 20px 20vh;
+  color: rgb(0, 0, 26);
+
+  opacity: 0;
+  animation: title-rise 0.7s ease-out forwards;
+}
+
+@keyframes title-rise {
+  from {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.square {
+  border-radius: 30px;
+  position: relative;
+  width: min(1000px, calc(100% - 40px));
+  aspect-ratio: 5 / 3;
+  height: auto;
+  margin: 2vh 0;
+  background-color: rgb(0, 4, 38);
+  overflow: hidden;
+
+  opacity: 0;
+  animation: fade-square linear both;
+  animation-timeline: view();
+  animation-range: entry 0% exit 100%;
+}
+
+.square-image {
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  margin: 20px;
+  display: block;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+@keyframes fade-square {
+  0% {
+    opacity: 0;
+  }
+
+15%,
+50% {
+  opacity: 1;
+}
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.reason-1,
+.reason-2,
+.reason-3,
+.reason-4,
+.reason-5,
+.reason-6 {
+  border-radius: 30px;
+  position: relative;
+  width: calc(100% - 40px);
+  max-width: 1200px;
+  height: clamp(420px, 45vw, 600px);
+  flex: 0 0 auto;
+  background-color: rgb(0, 4, 38);
+
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.reason-1 {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.reason-1-image {
+  width: 52%;
+  height: calc(100% - 40px);
+  margin-left: 20px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.reason-1-text {
+  width: 48%;
+  padding: 40px;
+  box-sizing: border-box;
+  color: white;
+}
+
+.reason-2 {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.reason-2-image {
+  width: 52%;
+  height: calc(100% - 40px);
+  margin-left: 20px;
+  object-fit: cover;
+  object-position: center 25%;
+  border-radius: 20px;
+}
+
+.reason-2-text {
+  width: 48%;
+  padding: 40px;
+  box-sizing: border-box;
+  color: white;
+}
+
+.reason-3 {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.reason-3-image {
+  width: 52%;
+  height: calc(100% - 40px);
+  margin-left: 20px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+}
+
+.reason-3-text {
+  width: 48%;
+  padding: 40px;
+  box-sizing: border-box;
+  color: white;
+}
+
+.reason-4 {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.reason-4-image {
+  width: 52%;
+  height: calc(100% - 40px);
+  margin-left: 20px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.reason-4-text {
+  width: 48%;
+  padding: 40px;
+  box-sizing: border-box;
+  color: white;
+}
+
+.reason-5 {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.reason-5-image {
+  width: 52%;
+  height: calc(100% - 40px);
+  margin-left: 20px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.reason-5-text {
+  width: 48%;
+  padding: 40px;
+  box-sizing: border-box;
+  color: white;
+}
+
+.reason-6 {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.reason-6-image {
+  width: 52%;
+  height: calc(100% - 40px);
+  margin-left: 20px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.reason-6-text {
+  width: 48%;
+  padding: 40px;
+  box-sizing: border-box;
+  color: white;
+}
+
+.reason-1-text h1,
+.reason-2-text h1,
+.reason-3-text h1,
+.reason-4-text h1,
+.reason-5-text h1,
+.reason-6-text h1 {
+  margin: 0;
+  font-size: clamp(24px, 3vw, 48px);
+  line-height: 1.15;
+}
+
+.ending {
+  font-size: clamp(48px, 10vw, 200px);
+  text-align: center;
+  margin: -35vh 20px 10vh;
+  color: rgb(0, 0, 0);
+}
+
+@media (max-width: 800px) {
+  body {
+    gap: 35vh;
+  }
+
+  .New_France_title {
+    margin: 120px 10px 60px;
+  }
+
+  .reason-1,
+  .reason-2,
+  .reason-3,
+  .reason-4,
+  .reason-5,
+  .reason-6 {
+    height: auto;
+    min-height: 600px;
+    flex-direction: column;
+  }
+
+  .reason-1-image,
+  .reason-2-image,
+  .reason-3-image,
+  .reason-4-image,
+  .reason-5-image,
+  .reason-6-image,
+  .reason-1-text,
+  .reason-2-text,
+  .reason-3-text,
+  .reason-4-text,
+  .reason-5-text,
+  .reason-6-text {
+    width: calc(100% - 40px);
+  }
+
+  .reason-1-image,
+  .reason-2-image,
+  .reason-3-image,
+  .reason-4-image,
+  .reason-5-image,
+  .reason-6-image {
+    height: 320px;
+    margin: 20px;
+  }
+}
